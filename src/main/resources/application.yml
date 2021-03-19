@@ -1,0 +1,46 @@
+
+    
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/safarydb?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: midou
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+      
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 65295843351-478tgl3kmq7ms60j2jj25bg2f4fk4nqr.apps.googleusercontent.com
+            client-secret: -KxLch_K346eAVgB6MGKr4iU
+            redirect-uri: "{baseUrl}/oauth2/callback/{registrationId}"
+            scope:
+            - email
+            - profile
+    user:
+      name: midou
+      password: midou      
+  jackson:
+    serialization:
+      write-date-keys-as-timestamps: false
+    time-zone: UTC
+      
+
+logging:
+  level:
+    '[org.slf4j]': DEBUG
+
+
+
+
+
+
+
